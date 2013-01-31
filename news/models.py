@@ -4,11 +4,10 @@ import pytils
 from ckeditor.fields import RichTextField
 
 class Article(models.Model):
-    slug = models.SlugField(verbose_name=u'название', unique=True)
+    slug = models.SlugField(verbose_name=u'название', blank=True, unique=True)
     name = models.CharField(max_length=128, verbose_name=u'название')
     image = models.FileField(upload_to= 'uploads/news', blank=True, max_length=256, verbose_name=u'картинка')
     date = models.DateField(verbose_name=u'дата')
-    desc = models.TextField(verbose_name=u'краткое описание')
     text = RichTextField(verbose_name=u'полный текст')
    
     class Meta:

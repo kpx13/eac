@@ -8,6 +8,8 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 
 from pages.models import Page
+from news.models import Article
+from slideshow.models import Slider
 
 def get_common_context(request):
     c = {}
@@ -19,12 +21,15 @@ def get_common_context(request):
 def home_page(request):
     c = get_common_context(request)
     c['request_url'] = 'home'
+    c['slideshow'] = Slider.objects.all()
+    c['content'] = Page.get_by_slug('home')['content']
+    c['news'] = Article.recent_some(3)
     return render_to_response('home.html', c, context_instance=RequestContext(request))
         
 def page(request, page_name):
     c = get_common_context(request)
     try:
-        c.update(Page.get_page_by_slug(page_name))
+        c.update(Page.get_by_slug(page_name))
         return render_to_response('page.html', c, context_instance=RequestContext(request))
     except:
         raise Http404('page %s not found' % page_name)

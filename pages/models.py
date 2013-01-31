@@ -4,7 +4,7 @@ from ckeditor.fields import RichTextField
 import pytils
 
 class Page(models.Model):
-    slug = models.SlugField(verbose_name=u'слаг', unique=True)
+    slug = models.SlugField(verbose_name=u'слаг', blank=True, unique=True)
     title = models.CharField(max_length=256, verbose_name=u'заголовок')
     content = RichTextField(blank=True, verbose_name=u'html-содержимое')  
     
@@ -16,7 +16,8 @@ class Page(models.Model):
         return self.slug
     
     def save(self, *args, **kwargs):
-        self.slug=pytils.translit.slugify(self.title)
+        if not self.slug:
+            self.slug=pytils.translit.slugify(self.title)
         super(Page, self).save(*args, **kwargs)
     
     @staticmethod
