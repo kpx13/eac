@@ -133,7 +133,12 @@ INSTALLED_APPS = (
     'ckeditor',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'pages'
+    'experts',
+    'news',
+    'pages',
+    'partners',
+    'projects',
+    'slideshow',
 )
 
 # A sample logging configuration. The only tangible logging

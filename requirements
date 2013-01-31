@@ -2,3 +2,4 @@ django==1.4.3
 django-filebrowser==3.5.1
 pil==1.1.7
 django-ckeditor==3.6.2
+pytils==0.2.3
