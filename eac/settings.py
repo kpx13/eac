@@ -82,6 +82,9 @@ STATICFILES_DIRS = (
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 MEDIA_PATH = PATH_FILEBROWSER_MEDIA = MEDIA_ROOT + 'uploads/'
 
+CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'uploads')
+CKEDITOR_MEDIA_PREFIX = '/media/ckeditor/'
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -127,8 +130,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'grappelli',
     'filebrowser',
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'pages'
 )
 
 # A sample logging configuration. The only tangible logging
