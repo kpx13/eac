@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+            <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="/static/images/slide-01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h4>Комплексные инвестиционные планы модернизации моногородов</h4>
+              <p class="lead"><a href='#' class='btn btn-info'>Подробнее...</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="/static/images/slide-02.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h4>Финансовая модель города Пензы</h4>
+              <p class="lead"><a href='#' class='btn btn-info'>Подробнее...</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="/static/images/slide-03.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h4>Разработка КИП г. Михайловки Волгоградской обл.</h4>
+              <p class="lead"><a href='#' class='btn btn-info'>Подробнее...</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+    
+   
+
+      <div class="row">
+        <div class="span4">
+            <div class="input-append">
+                <input style='width: 240px' id="appendedInputButton" type="text">
+                <button class="btn" type="button">&nbsp;<i class="icon-search"></i>&nbsp;</button>
+            </div>  
+                        
+            <div class="well">
+                
+                <h4>Новости</h4> <hr />
+                <div class='news-item'>
+                    <a href='#'>29.01.2013</a>
+                    <img src='/static/images/news.bmp' />
+                    <p>НП «ЕАЦ» принял участие… организовал… обеспечил, разработал, представил..</p>
+                </div>
+                <hr />
+               
+                
+            </div><!--/.well -->
+            <a href='#' class='btn btn-info' style=''>Презентация о компании</a>
+        </div><!--/span-->
+        
+        
+        <div class="span8">
+            <h3>Мы рады приветствовать вас на сайте НП «Евро-Азиатский центр правового и экономического сотрудничества»!   </h3>
+            <p>
+            Центр оказывает юридическую помощь российским и зарубежным компаниям, предоставляет широкий спектр услуг в области экономических исследований, финансового консалтинга, бизнеса, а также осуществляет правовое сопровождение региональных и корпоративных программ экономического, производственного и социального развития.  Центр располагает собственной экспертной базой, достаточным организационным, материально-техническим и интеллектуальным потенциалом для решения самых сложных юридических и экономических проблем. </p>
+            <p>
+Центр поддерживает деловые контакты с зарубежными юридическими компаниями 6 стран, в т.ч. США, Великобритании, Италии, Ирландии, Испании, имеет свои представительства в Китае, Болгарии, Германии, на Украине, в Киргизии, Узбекистане, а также Генеральных представителей в 12 субъектах Российской Федерации. В составе Центра действуют Восточно-Сибирское отделение. Российский инновационно-правовой центр, Российское агентство правовой информации, Третейский суд по разрешению экономических споров.
+            </p>
+        </div><!--/span-->
+    </div><!--/row-->
+
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+{% endblock %}
