@@ -4,8 +4,8 @@ import pytils
 from ckeditor.fields import RichTextField
 
 class Project(models.Model):
-    slug = models.SlugField(verbose_name=u'слаг', unique=True)
-    name = models.CharField(max_length=128, verbose_name=u'название')
+    slug = models.SlugField(verbose_name=u'слаг', blank=True, unique=True)
+    name = models.CharField(max_length=512, verbose_name=u'название')
     image = models.FileField(upload_to= 'uploads/projects', blank=True, max_length=256, verbose_name=u'картинка')
     date = models.DateField(verbose_name=u'дата')
     desc = models.TextField(verbose_name=u'краткое описание')
@@ -20,7 +20,8 @@ class Project(models.Model):
         return self.name
     
     def save(self, *args, **kwargs):
-        self.slug=pytils.translit.slugify(self.name)
+        if not self.slug:
+            self.slug=pytils.translit.slugify(self.name)
         super(Project, self).save(*args, **kwargs)
     
     @staticmethod

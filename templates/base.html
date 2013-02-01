@@ -30,7 +30,7 @@
              <div class="navbar">
         <div class="navbar-inner">
             <ul class="nav">
-                <li {% if request_url == 'home' %} class='active' {% endif %}><a href="#">Главная</a></li>
+                <li {% if request_url == 'home' %} class='active' {% endif %}><a href="/">Главная</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle"
                     data-toggle="dropdown"
@@ -57,9 +57,9 @@
                         <li><a href="/page/services_economics">Экономическое сотрудничество</a></li>
                     </ul>
                 </li>
-                <li><a href="/projects">Проекты</a></li>
-                <li><a href="/news">Новости</a></li>
-                <li><a href="/page/contacts">Контакты</a></li>
+                <li {% if 'projects' in request_url %} class='active' {% endif %}><a href="/projects">Проекты</a></li>
+                <li {% if 'news' in request_url %} class='active' {% endif %}><a href="/news">Новости</a></li>
+                <li {% if 'contacts' in request_url  %} class='active' {% endif %}><a href="/page/contacts">Контакты</a></li>
             </ul>
         </div>
     </div>

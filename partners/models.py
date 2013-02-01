@@ -7,8 +7,8 @@ class Partner(models.Model):
     desc = models.TextField(verbose_name=u'краткое описание')
    
     class Meta:
-        verbose_name = u'проект'
-        verbose_name_plural = u'проекты'
+        verbose_name = u'партнер'
+        verbose_name_plural = u'партнеры'
         ordering = ['name']
     
     def __unicode__(self):

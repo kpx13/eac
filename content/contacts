@@ -1,11 +1,17 @@
 <div class="row">
+<div class="span6">
+<!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (начало) -->
+<div id="ymaps-map-id_135965783718130623885" style="width: 450px; height: 350px;"></div>
+<div style="width: 450px; text-align: right;"><a href="http://api.yandex.ru/maps/tools/constructor/index.xml" target="_blank" style="color: #1A3DC1; font: 13px Arial, Helvetica, sans-serif;"></a></div>
+<script type="text/javascript">function fid_135965783718130623885(ymaps) {var map = new ymaps.Map("ymaps-map-id_135965783718130623885", {center: [37.49285899999999, 55.83918669299855], zoom: 16, type: "yandex#map"});map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"]));map.geoObjects.add(new ymaps.Placemark([30.353975, 59.913253], {balloonContent: "cargoexpress"}, {preset: "twirl#darkblueDotIcon"})).add(new ymaps.Placemark([37.492859, 55.838511], {balloonContent: ""}, {preset: "twirl#blueDotIcon"}));};</script>
+<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=ru-RU&coordorder=longlat&load=package.full&wizard=constructor&onload=fid_135965783718130623885"></script>
+<!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (конец) -->
+    </div>
     <div class="span6">
 <p>125212, Москва, ул. Головинское шоссе  д.8 корп.2А<br/>
 Телефон: +7 (495) 452-58-48<br/>
 Факс: +7 (495) 452-02-64<br/>
 Электронная почта: mail@еац.рф</p>
 </div>
-<div class="span6">
-Карта *** 
-    </div>
+    
 </div>

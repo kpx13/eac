@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+      <div class="row">
+        <div class="span4">
+            <div class="input-append">
+                <input style='width: 240px' id="appendedInputButton" type="text">
+                <button class="btn" type="button">&nbsp;<i class="icon-search"></i>&nbsp;</button>
+            </div>  
+                        
+            <div class="well">
+                
+                <h4>Новости</h4> 
+                {% for n in news %}
+                    <hr />
+                    <div class='news-item'>
+                        <a href='/news/{{ n.slug }}'>{{ n.date }}</a>
+                        <a href='/news/{{ n.slug }}'><img src='/media/{{ n.image }}' /></a>
+                        <p>{{ n.name }}</p>
+                    </div>
+                {% endfor %}
+                <a href='#' class='btn btn-info' style=''>Архив новостей</a>
+                
+            </div><!--/.well -->
+            
+        </div><!--/span-->
+        
+        
+        <div class="span8">
+            <h2>{{ recent.name }}</h2><span>{{ recent.date }}</span><br />
+            <img src='/media/{{ recent.image }}' /><br />
+            {{ recent.text|safe }}
+            
+        </div><!--/span-->
+    </div><!--/row-->
+
+{% endblock %}
