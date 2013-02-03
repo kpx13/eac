@@ -29,7 +29,7 @@
                             <p>{{ n.name }}</p>
                         </div>
                     {% endfor %}
-                    <a href='#' class='btn btn-info' style=''>Архив новостей</a>
+                    <a href='#' class='btn btn-small btn-primary' style=''>Архив новостей</a>
                 {% endif %}
                 
             </div><!--/.well -->
@@ -38,15 +38,16 @@
         
         
         <div class="span8">
+        <div class='well' style='background-color: white'>
             {% if not_found %}
                 <h4>По вашему запросу ничего не найдено.</h4>
-                <a href='/news' class='btn btn-info'>Очистить фильтр</a>
+                <a href='/news' class='btn btn-small btn-primary'>Очистить фильтр</a>
             {% else %}
                 <h2>{{ recent.name }}</h2><span>{{ recent.date }}</span><br />
                 <img src='/media/{{ recent.image }}' /><br />
                 {{ recent.text|safe }}
             {% endif %}
-            
+        </div>
         </div><!--/span-->
     </div><!--/row-->
 

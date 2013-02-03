@@ -7,7 +7,7 @@
       <div class="carousel-inner">
         {% for s in slideshow %}
             <div class="item {% if forloop.first %} active {% endif %}">
-                <img src="/media/{{ s.image }}" alt="">
+                <img src="/media/{{ s.image }}" style='width: 940px; height: 350px' alt="">
                 <div class="container">
                     <div class="carousel-caption">
                         <h4>{{ s.text }}</h4>
@@ -51,8 +51,10 @@
         
         
         <div class="span8">
+            <div class='well' style='background-color: white'>
             {{ content|safe }}
-            <a href='#' class='btn btn-info' style=''>Презентация о компании</a>
+            <a href='#' class='btn btn-primary' style=''>Презентация о компании</a>
+            </div>
         </div><!--/span-->
     </div><!--/row-->
 

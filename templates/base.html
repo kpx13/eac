@@ -15,15 +15,21 @@
         
         <div class="container">
             <div class="row">
-                <div class="span6">
+                <div class="span7">
                     <br />
-                    <a href='/'><img src='/static/images/logo.png' /></a>
+                    
+                    <div class='header' style='padding-top: 10px'>
+                        <a href='/'><img src='/static/images/logo.png' style='height: 90px; float: left' /></a>
+                        <h2><i>Евро - Азиатский Центр</i></h2>
+                        <h5><i>экономического и правового сотрудничества</i></h5>
+                    </div>
                 </div>
-                <div class="span6">
+                <div class="span5">
                     <br />
-                    <p  style='text-align: right'>125212, г.Москва, Головинское шоссе д.8., корпус 2а<br />
+                    <div class='well' style='background-color: white'>
+                    <p  style='text-align: right'>125212, г.Москва, Головинское шоссе д.8., к 2а<br />
 Тел.    +7 495 452 58 48; +7 495 452 58 85<br />
-Факс   +7 495 452 02 64</p>
+Факс   +7 495 452 02 64</p></div>
                 </div>
             </div>
             
@@ -40,7 +46,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="/page/history">История</a></li>
-                        <li><a href="/page/leaders">Руководство</a></li>
+                        <li><a href="/leaders">Руководство</a></li>
                         <li><a href="/experts">Эксперты</a></li>
                         <li><a href="/partners">Партнеры</a></li>
                     </ul>
@@ -66,7 +72,6 @@
     
     {% block content %}
     {% endblock %}
-    
 
             <hr />
             <footer>
