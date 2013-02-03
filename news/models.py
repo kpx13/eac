@@ -6,7 +6,7 @@ from ckeditor.fields import RichTextField
 
 
 class Article(models.Model):
-    slug = models.SlugField(verbose_name=u'название', blank=True, unique=True)
+    slug = models.SlugField(verbose_name=u'слаг', blank=True, unique=True)
     name = models.CharField(max_length=128, verbose_name=u'название')
     image = models.FileField(upload_to= 'uploads/news', blank=True, max_length=256, verbose_name=u'картинка')
     date = models.DateField(verbose_name=u'дата')
@@ -21,7 +21,8 @@ class Article(models.Model):
         return self.name
     
     def save(self, *args, **kwargs):
-        self.slug=pytils.translit.slugify(self.name)
+        if not self.slug:
+            self.slug=pytils.translit.slugify(self.name)[:49]
         super(Article, self).save(*args, **kwargs)
     
     @staticmethod

@@ -21,7 +21,7 @@ class Project(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug=pytils.translit.slugify(self.name)
+            self.slug=pytils.translit.slugify(self.name)[:49]
         super(Project, self).save(*args, **kwargs)
     
     @staticmethod
