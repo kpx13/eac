@@ -43,7 +43,7 @@
                 <h4>По вашему запросу ничего не найдено.</h4>
                 <a href='/news' class='btn btn-small btn-primary'>Очистить фильтр</a>
             {% else %}
-                <h4>{{ recent.name }}</h4><span>{{ recent.date }}</span><br />
+                <h2>{{ recent.name }}</h2><span>{{ recent.date }}</span><br />
                 <img src='/media/{{ recent.image }}' /><br />
                 {{ recent.text|safe }}
             {% endif %}
