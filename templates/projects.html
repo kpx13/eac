@@ -7,7 +7,7 @@
             <h2>Проекты</h2> 
             {% for p in projects %}
                 <div class='well' style='background-color: white'>
-                    <a href='/projects/{{ p.slug }}'><h4>{{ p.name }}</h4></a><span><b>{{ p.date.year }}</b> г.</span><br />
+                    <a href='/projects/{{ p.slug }}'><h4><i>{{ p.name }}</i></h4></a><span><b>{{ p.date.year }}</b> г.</span><br />
                     <a href='/projects/{{ p.slug }}'><img src='/media/{{ p.image }}' style='max-height: 300px; float: left; padding-right: 10px' /></a>
                     {{ p.desc }}<br /><br />
                     <a href='/projects/{{ p.slug }}' class='btn btn-small btn-primary'>Подробнее >></a>
