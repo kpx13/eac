@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400italic,500italic,400&subset=latin,cyrillic-ext,cyrillic);
+
 p, h3 
 {
     text-align: justify;
@@ -12,4 +14,42 @@ h3
 .clear
 {
     clear: both;
+}
+
+body
+{
+    border-top: 5px solid #045789;
+    background: url('/static/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png');
+}
+
+.content
+{
+    border: 5px solid #ddd;
+    background-color: #fefefe;
+    padding: 10px;
+}
+
+h3, h4
+{
+    color: #045789;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+
+.header h2
+{
+    padding-top: 10px;
+    line-height: 10px;
+    text-shadow: 2px 2px 2px #aaa;
+    color: #045789;
+}
+
+.header h5
+{
+    text-shadow: 2px 2px 2px #aaa;
 }

@@ -72,6 +72,12 @@ def partners_page(request, page_name=None):
     c['partners'] = Partner.objects.all()
     return render_to_response('partners.html', c, context_instance=RequestContext(request))
 
+def leaders_page(request, page_name=None):
+    c = get_common_context(request)
+    c['f'] = Page.get_by_slug('leader_f')
+    c['s'] = Page.get_by_slug('leader_s')
+    return render_to_response('leaders.html', c, context_instance=RequestContext(request))
+
 def page(request, page_name):
     c = get_common_context(request)
     try:

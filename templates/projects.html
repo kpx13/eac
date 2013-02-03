@@ -6,14 +6,13 @@
         <div class="span12">
             <h2>Проекты</h2> 
             {% for p in projects %}
-                <hr />
-                <div>
-                    <a href='/projects/{{ p.slug }}'><h5>{{ p.name }}</h5></a><span><b>{{ p.date.year }}</b> г.</span><br />
+                <div class='well' style='background-color: white'>
+                    <a href='/projects/{{ p.slug }}'><h4>{{ p.name }}</h4></a><span><b>{{ p.date.year }}</b> г.</span><br />
                     <a href='/projects/{{ p.slug }}'><img src='/media/{{ p.image }}' style='max-height: 300px; float: left; padding-right: 10px' /></a>
-                    {{ p.desc }}<br />
-                    <a href='/projects/{{ p.slug }}' class='btn btn-small btn-info'>Подробнее ...</a>
+                    {{ p.desc }}<br /><br />
+                    <a href='/projects/{{ p.slug }}' class='btn btn-small btn-primary'>Подробнее >></a>
+                    <div class='clear'></div>
                 </div>
-                <div class='clear'></div>
             {% endfor %}
         </div>
     </div><!--/row-->
