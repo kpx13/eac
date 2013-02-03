@@ -15,6 +15,8 @@ urlpatterns = patterns('',
     url(r'^news/(?P<page_name>[\w-]+)$' , views.news_page),
     url(r'^projects$' , views.projects_page),
     url(r'^projects/(?P<page_name>[\w-]+)$' , views.projects_page),
+    url(r'^experts$' , views.experts_page),
+    url(r'^partners$' , views.partners_page),
     
     url(r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/favicon.ico'}),
     url(r'^grappelli/', include('grappelli.urls')),

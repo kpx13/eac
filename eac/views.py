@@ -11,6 +11,8 @@ from pages.models import Page
 from news.models import Article
 from slideshow.models import Slider
 from projects.models import Project
+from experts.models import Expert
+from partners.models import Partner
 
 def get_common_context(request):
     c = {}
@@ -50,6 +52,16 @@ def projects_page(request, page_name=None):
             return render_to_response('project_details.html', c, context_instance=RequestContext(request))
         except:
             raise Http404('page %s not found' % page_name)
+        
+def experts_page(request, page_name=None):
+    c = get_common_context(request)
+    c['experts'] = Expert.objects.all()
+    return render_to_response('experts.html', c, context_instance=RequestContext(request))
+
+def partners_page(request, page_name=None):
+    c = get_common_context(request)
+    c['partners'] = Partner.objects.all()
+    return render_to_response('partners.html', c, context_instance=RequestContext(request))
 
 def page(request, page_name):
     c = get_common_context(request)
