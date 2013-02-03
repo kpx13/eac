@@ -31,15 +31,24 @@ def home_page(request):
 
 def news_page(request, page_name=None):
     c = get_common_context(request)
-    try:
-        if page_name:
-            c['recent'] = Article.get_by_slug(page_name)
+    if (request.method == 'GET') or not request.POST.get('search_value', None):
+        try:
+            if page_name:
+                c['recent'] = Article.get_by_slug(page_name)
+            else:
+                c['recent'] = Article.recent_some(1)[0]
+            c['news'] = Article.recent_some(5)
+            return render_to_response('news.html', c, context_instance=RequestContext(request))
+        except:
+            raise Http404('page %s not found' % page_name)
+    else: # POST
+        c['search_value'] = request.POST['search_value']
+        c['news'] = Article.find(c['search_value'])
+        if len(c['news']) > 0:
+            c['recent'] = c['news'][0]
         else:
-            c['recent'] = Article.recent_some(1)[0]
-        c['news'] = Article.recent_some(5)
+            c['not_found'] = True
         return render_to_response('news.html', c, context_instance=RequestContext(request))
-    except:
-        raise Http404('page %s not found' % page_name)
 
 def projects_page(request, page_name=None):
     c = get_common_context(request)

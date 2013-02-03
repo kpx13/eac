@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.db.models import Q
 import pytils
 from ckeditor.fields import RichTextField
+
 
 class Article(models.Model):
     slug = models.SlugField(verbose_name=u'название', blank=True, unique=True)
@@ -35,3 +37,8 @@ class Article(models.Model):
             return Article.objects.get(slug=page_name)
         except:
             return None
+        
+    @staticmethod
+    def find(value):
+        return Article.objects.filter(Q(name__contains=value) | Q(text__contains=value))
+        

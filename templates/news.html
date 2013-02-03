@@ -5,22 +5,32 @@
       <div class="row">
         <div class="span4">
             <div class="input-append">
-                <input style='width: 240px' id="appendedInputButton" type="text">
-                <button class="btn" type="button">&nbsp;<i class="icon-search"></i>&nbsp;</button>
+                <form action='/news' method='post'>
+                    {% csrf_token %}
+                    <input style='width: 240px' id="appendedInputButton" type="text" {% if search_value %} value='{{ search_value }}' {% endif %} name='search_value' />
+                    <button class="btn" type="submit">&nbsp;<i class="icon-search"></i>&nbsp;</button>
+                </form>
             </div>  
                         
             <div class="well">
-                
-                <h4>Новости</h4> 
-                {% for n in news %}
-                    <hr />
-                    <div class='news-item'>
-                        <a href='/news/{{ n.slug }}'>{{ n.date }}</a>
-                        <a href='/news/{{ n.slug }}'><img src='/media/{{ n.image }}' /></a>
-                        <p>{{ n.name }}</p>
-                    </div>
-                {% endfor %}
-                <a href='#' class='btn btn-info' style=''>Архив новостей</a>
+                {% if not_found %}
+                    <p>Вы искали: <b>{{ search_value }}</b></p>
+                {% else %}
+                    {% if search_value %} 
+                        <p>Вы искали: <b>{{ search_value }}</b></p>
+                    {% else %}
+                        <h4>Новости</h4> 
+                    {% endif %}
+                    {% for n in news %}
+                        <hr />
+                        <div class='news-item'>
+                            <a href='/news/{{ n.slug }}'>{{ n.date }}</a>
+                            <a href='/news/{{ n.slug }}'><img src='/media/{{ n.image }}' /></a>
+                            <p>{{ n.name }}</p>
+                        </div>
+                    {% endfor %}
+                    <a href='#' class='btn btn-info' style=''>Архив новостей</a>
+                {% endif %}
                 
             </div><!--/.well -->
             
@@ -28,9 +38,14 @@
         
         
         <div class="span8">
-            <h2>{{ recent.name }}</h2><span>{{ recent.date }}</span><br />
-            <img src='/media/{{ recent.image }}' /><br />
-            {{ recent.text|safe }}
+            {% if not_found %}
+                <h4>По вашему запросу ничего не найдено.</h4>
+                <a href='/news' class='btn btn-info'>Очистить фильтр</a>
+            {% else %}
+                <h2>{{ recent.name }}</h2><span>{{ recent.date }}</span><br />
+                <img src='/media/{{ recent.image }}' /><br />
+                {{ recent.text|safe }}
+            {% endif %}
             
         </div><!--/span-->
     </div><!--/row-->
