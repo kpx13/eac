@@ -33,18 +33,11 @@
             </div>  
                         
             <div class="well">
-                
-                <h4><i>Новости</i></h4> 
-                {% for n in news %}
-                    <hr />
                     <div class='news-item'>
                         <a href='/news/{{ n.slug }}'>{{ n.date }}</a>
                         <a href='/news/{{ n.slug }}'><img src='/media/{{ n.image }}' /></a>
                         <p>{{ n.name }}</p>
                     </div>
-                {% endfor %}
-               
-                
             </div><!--/.well -->
             
         </div><!--/span-->

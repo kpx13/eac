@@ -26,7 +26,7 @@ def home_page(request):
     c['request_url'] = 'home'
     c['slideshow'] = Slider.objects.all()
     c['content'] = Page.get_by_slug('home')['content']
-    c['news'] = Article.recent_some(5)
+    c['n'] = Article.recent_some(1)[0]
     return render_to_response('home.html', c, context_instance=RequestContext(request))
 
 def news_page(request, page_name=None):
