@@ -8,11 +8,23 @@
         <div class="span12">
         <div class='well' style='background-color: white'>
             
-            <ul>
             {% for p in partners %}
-                <li>{{ p.name }}</li>
+                {% if p.image %}
+                <div class='span5' style='padding-bottom: 40px'>
+                    <img src='/media/{{ p.image }}' style='height: 70px' /><br />
+                    <i>{{ p.name }}</i>
+                </div>
+                {% endif %}
             {% endfor %}
-            </ul>
+            
+            {% for p in partners %}
+                {% if not p.image %}
+                <div class='span7'>
+                    <i>{{ p.name }}</i>
+                </div>
+                {% endif %}
+            {% endfor %}
+            <div class='clear'></div>
         </div>
         </div>
     </div><!--/row-->

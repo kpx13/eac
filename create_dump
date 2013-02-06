@@ -1,0 +1,1 @@
+python manage.py dumpdata auth experts news pages partners projects slideshow  > dump_06_02.json
