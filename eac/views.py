@@ -37,7 +37,7 @@ def news_page(request, page_name=None):
                 c['recent'] = Article.get_by_slug(page_name)
             else:
                 c['recent'] = Article.recent_some(1)[0]
-            c['news'] = Article.recent_some(5)
+            c['news'] = Article.recent_some(1000)
             return render_to_response('news.html', c, context_instance=RequestContext(request))
         except:
             raise Http404('page %s not found' % page_name)

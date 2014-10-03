@@ -10,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', views.home_page),
-    url(r'^page/(?P<page_name>\w+)$' , views.page),
+    url(r'^page/(?P<page_name>[\w-]+)$' , views.page),
     url(r'^news$' , views.news_page),
     url(r'^news/(?P<page_name>[\w-]+)$' , views.news_page),
     url(r'^projects$' , views.projects_page),

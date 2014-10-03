@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 from os.path import abspath, join, dirname
 
@@ -139,6 +140,7 @@ INSTALLED_APPS = (
     'partners',
     'projects',
     'slideshow',
+    'sorl.thumbnail',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -161,6 +163,32 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+    }
+}
+
+GRAPPELLI_ADMIN_TITLE = u'Евро-Ациатский Центр'
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 7864320
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar':
+           [
+                ['Source', '-', 'Templates'],
+                ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],
+                ['Undo', 'Redo', ],
+                ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+                ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+                ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar'],
+		'/',
+                ['RemoveFormat', 'Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+                ['Styles','Format','FontSize', 'TextColor','BGColor'],
+                ['Link','Unlink',],
+                ['Maximize', 'ShowBlocks'],
+            ],
+        'width': 1056,
+        'height': 200,
+        'toolbarCanCollapse': True,
+        'resize_enabled': True
     }
 }
 
